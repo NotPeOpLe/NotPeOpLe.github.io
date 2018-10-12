@@ -4,6 +4,7 @@
 function go() {
     var url = new URL(document.location.href);
     var goTo = url.searchParams.get('go');
+	if (goTo == null) alert(':D');
     location.href = goTo;
 }
 go();
