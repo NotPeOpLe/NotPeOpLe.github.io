@@ -12,28 +12,8 @@ function GetQueryString(name) {
 	return context == null || context == "" || context == "undefined" ? "" : context;
 	}
 }
-
-function closewindow(){
-	if(window.opener){
-	window.opener.location.reload(true);
-	
-	}
-}
-
-function clock(){
-	i = i -1;
-	if(document.getElementById("info")){
-	document.getElementById("info").innerHTML = "本窗口將在"+i+"秒後自動關閉";
-	}
-	if(i > 0)
-	setTimeout("clock();",1000);
-	else
-	closewindow();
-}
-
-var i = 4;
-clock();
 location.href=GetQueryString("go");
+window.close();
 </script>
 </body>
 </html>
