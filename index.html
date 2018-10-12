@@ -1,3 +1,4 @@
+<html>
 <body>
 <Script Language="JavaScript">
 function GetQueryString(name) {
@@ -12,10 +13,27 @@ function GetQueryString(name) {
 	}
 }
 
-function gg() {
-	window.close();
+function closewindow(){
+	if(window.opener){
+	window.opener.location.reload(true);
+	
+	}
 }
+
+function clock(){
+	i = i -1;
+	if(document.getElementById("info")){
+	document.getElementById("info").innerHTML = "本窗口將在"+i+"秒後自動關閉";
+	}
+	if(i > 0)
+	setTimeout("clock();",1000);
+	else
+	closewindow();
+}
+
+var i = 4;
+clock();
 location.href=GetQueryString("go");
-setTimeout(gg, 1000);
 </script>
 </body>
+</html>
