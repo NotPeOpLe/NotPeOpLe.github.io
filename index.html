@@ -11,6 +11,11 @@ function GetQueryString(name) {
 	return context == null || context == "" || context == "undefined" ? "" : context;
 	}
 }
+
+function gg() {
+	window.close();
+}
 location.href=GetQueryString("go");
+setTimeout(gg, 1000);
 </script>
 </body>
