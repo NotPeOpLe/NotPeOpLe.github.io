@@ -1,18 +1,12 @@
 <html>
-<body>
-<Script Language="JavaScript">
-function GetQueryString(name) {
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-	var r = window.location.search.substr(1).match(reg); 
-	var context = "";
-	if (r != null) {
-	context = r[2];
-	reg = null;
-	r = null;
-	return context == null || context == "" || context == "undefined" ? "" : context;
-	}
+<head>
+<script language="JavaScript">
+function go() {
+    var url = new URL(document.location.href);
+    var goTo = url.searchParams.get('go');
+    location.href = goTo;
 }
-location.href=GetQueryString("go");
+go();
 </script>
-</body>
+</head>
 </html>
