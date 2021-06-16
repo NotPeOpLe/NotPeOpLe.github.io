@@ -1,13 +1,9 @@
-<html>
-<head>
-<script language="JavaScript">
-function go() {
-    var url = new URL(document.location.href);
-    var goTo = url.searchParams.get('go');
-	if (goTo == null) alert(':D');
-    location.href = goTo;
-}
-go();
-</script>
-</head>
-</html>
+<form action="" method="post">
+    <label for="account">account</label>
+    <input type="text" name="account" id="account">
+    <br>
+    <label for="password">password</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <button type="submit">login</button>
+</form>
